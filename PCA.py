@@ -3,13 +3,13 @@ import numpy as np
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 
-import app
+from app import outputs, y_test
 
 languages = ["de", "en", "es", "fr", "nl", "pt"]
 
 # Visualize using PCA
-model_outputs = app.outputs.cpu().numpy()
-targets = app.y_test.numpy()
+model_outputs = outputs.cpu().numpy()
+targets = y_test.numpy()
 outputs_PCA = PCA(n_components=2).fit_transform(model_outputs)
 
 fig, ax = plt.subplots()
